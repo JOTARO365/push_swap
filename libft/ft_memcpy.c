@@ -6,12 +6,11 @@
 /*   By: waon-in <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 15:00:31 by waon-in           #+#    #+#             */
-/*   Updated: 2024/02/23 23:18:11 by waon-in          ###   ########.fr       */
+/*   Updated: 2024/03/22 00:19:06 by waon-in          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "include/libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

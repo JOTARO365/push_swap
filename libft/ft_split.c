@@ -6,10 +6,10 @@
 /*   By: waon-in <waon-in@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:20:28 by waon-in           #+#    #+#             */
-/*   Updated: 2023/10/24 01:52:26 by waon-in          ###   ########.fr       */
+/*   Updated: 2024/03/22 00:23:20 by waon-in          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "include/libft.h"
 
 static char	**ft_allocate_res(char const *s, char c, size_t *word_count)
 {

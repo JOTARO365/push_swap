@@ -5,38 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: waon-in <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/15 20:30:06 by waon-in           #+#    #+#             */
-/*   Updated: 2024/03/16 00:07:11 by waon-in          ###   ########.fr       */
+/*   Created: 2024/04/16 20:51:42 by waon-in           #+#    #+#             */
+/*   Updated: 2024/04/16 21:01:04 by waon-in          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "push_swap.h"
 
-int	ft_checknum(char *str)
+int	main(int argv, char **argc)
 {
-	if (*str == ' ')
-		return (0);
-	while (*str != '\0')
-	{
-		if (!ft_isdigit(*str))
-			return (0);
-		str++;
-	}
-	return (1);
-}
-
-int	main(int arc, char **arv)
-{
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_list	*stack_a;
+	t_list	*stack_b;
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (arc < 2)
-	{
-		write(1, arv[0], ft_strlen(arv[0]));
-		return (1);
-	}
-	return (0);
+
+	if (argc < 2)
+		return ;
+	else
 }

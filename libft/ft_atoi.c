@@ -6,11 +6,11 @@
 /*   By: waon-in <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 18:29:19 by waon-in           #+#    #+#             */
-/*   Updated: 2023/10/07 21:05:15 by waon-in          ###   ########.fr       */
+/*   Updated: 2024/03/22 00:13:53 by waon-in          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
 int	ft_atoi(const char *str)
 {

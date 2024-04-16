@@ -6,11 +6,11 @@
 /*   By: waon-in <waon-in@student.42>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 18:50:14 by waon-in           #+#    #+#             */
-/*   Updated: 2023/09/24 17:48:52 by waon-in          ###   ########.fr       */
+/*   Updated: 2024/03/22 00:14:43 by waon-in          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
 int	ft_isalnum(int c)
 {

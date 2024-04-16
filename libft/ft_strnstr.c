@@ -6,11 +6,11 @@
 /*   By: waon-in <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 15:37:03 by waon-in           #+#    #+#             */
-/*   Updated: 2023/10/05 16:35:07 by waon-in          ###   ########.fr       */
+/*   Updated: 2024/03/22 00:27:21 by waon-in          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

@@ -6,11 +6,11 @@
 /*   By: waon-in <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 14:46:13 by waon-in           #+#    #+#             */
-/*   Updated: 2023/09/24 17:26:14 by waon-in          ###   ########.fr       */
+/*   Updated: 2024/03/22 00:14:10 by waon-in          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

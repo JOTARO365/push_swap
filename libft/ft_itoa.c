@@ -6,11 +6,11 @@
 /*   By: waon-in <waon-in@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:20:16 by waon-in           #+#    #+#             */
-/*   Updated: 2023/10/20 01:07:49 by waon-in          ###   ########.fr       */
+/*   Updated: 2024/03/22 00:15:52 by waon-in          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
 static int	ft_get_num(int n)
 {

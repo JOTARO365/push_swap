@@ -6,11 +6,11 @@
 /*   By: waon-in <waon-in@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:25:22 by waon-in           #+#    #+#             */
-/*   Updated: 2023/10/19 22:53:37 by waon-in          ###   ########.fr       */
+/*   Updated: 2024/03/22 00:26:33 by waon-in          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
 char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
 {

@@ -6,11 +6,11 @@
 /*   By: waon-in <waon-in@student.42>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:35:17 by waon-in           #+#    #+#             */
-/*   Updated: 2023/10/24 03:28:37 by waon-in          ###   ########.fr       */
+/*   Updated: 2024/03/22 00:23:43 by waon-in          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
 char	*ft_strdup(const char *s1)
 {

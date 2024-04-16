@@ -6,11 +6,11 @@
 /*   By: waon-in <waon-in@student.42>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:35:44 by waon-in           #+#    #+#             */
-/*   Updated: 2023/10/24 00:44:48 by waon-in          ###   ########.fr       */
+/*   Updated: 2024/03/22 00:24:47 by waon-in          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
 size_t	ft_strlcpy(char	*dst, const char *src, size_t dstsize)
 {

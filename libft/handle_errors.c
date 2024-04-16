@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   handle_errors.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waon-in <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 23:24:47 by waon-in           #+#    #+#             */
-/*   Updated: 2024/04/06 23:29:45 by waon-in          ###   ########.fr       */
+/*   Created: 2024/03/24 23:08:46 by waon-in           #+#    #+#             */
+/*   Updated: 2024/03/25 20:12:09 by waon-in          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "include/libft.h"
 
-#include "../libft/include/libft.h"
-
-# endif
+void	handle_errors(char *str)
+{
+	write(2, "error", 7);
+	write(2, str, ft_strlen(str));
+	write(2, "\n", 1);
+	exit(1);
+}
