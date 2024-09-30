@@ -19,7 +19,7 @@
 # include <fcntl.h>
 # include <stdarg.h>
 
-# ifdef BUFFER_SIZE
+# ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 
 # endif

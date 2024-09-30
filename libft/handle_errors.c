@@ -14,7 +14,7 @@
 
 void	handle_errors(char *str)
 {
-	write(2, "error", 7);
+	write(2, "error", 5);
 	write(2, str, ft_strlen(str));
 	write(2, "\n", 1);
 	exit(1);

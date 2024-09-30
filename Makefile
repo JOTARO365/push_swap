@@ -10,21 +10,42 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	push_swap
+NAME		=	push_swap
 
-SRC	=	main.c instruction.c
+OBJ_DIR 	=	bin
 
-CC	=	cc
+SRC		=	main.c instruction.c
 
-CFLAGS	=	-Wall -Wextra -Werror
+CC		=	cc
 
-LIBFT	=	libft/libft.a
+CFLAGS		=	-Wall -Wextra -Werror
 
-OBJ	=	$(SRC:.c=.o)
+LIBFT_DIR	=	libft
 
-RM	=	rm -f
+LIBFT		=	$(LIBFT_DIR)/libft.a
+
+OBJ		=	$(addprefix $(OBJ_DIR)/src/ , $(addsuffix .o, $(SRC)))
+
+RM		=	rm -f
 
 
+$(OBJ_DIR)/src/%.o: %.c
+	@mkdir -p $(OBJ_DIR)/src
+	$(CC) $(CFLAGS) -c $< -o $@
 
+$(NAME) : $(OBJ)
+	$(MAKE) -C $(LIBFT_DIR)
+	$(CC) $(CFLAGS) $(LIBFT) -o $(NAME)
 
+all : $(NAME)
 
+clean	: 
+	$(RM) $(FOLDER) $(SRC)
+fclean	:
+	$(RM) $(NAME)
+
+re :
+	make fclean
+	make
+
+.PHONY : all clean fclean re
