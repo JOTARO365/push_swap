@@ -12,7 +12,7 @@
 
 NAME		=	push_swap
 
-OBJ_DIR 	=	bin
+OBJ_DIR 	=	src
 
 SRC		=	main.c instruction.c
 
@@ -24,28 +24,28 @@ LIBFT_DIR	=	libft
 
 LIBFT		=	$(LIBFT_DIR)/libft.a
 
-OBJ		=	$(addprefix $(OBJ_DIR)/src/ , $(addsuffix .o, $(SRC)))
+OBJ		=	$(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
-RM		=	rm -f
+RM		=	rm -rf
 
 
-$(OBJ_DIR)/src/%.o: %.c
-	@mkdir -p $(OBJ_DIR)/src
+bin/$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJ)
-	$(MAKE) -C $(LIBFT_DIR)
+	make -C $(LIBFT_DIR)
 	$(CC) $(CFLAGS) $(LIBFT) -o $(NAME)
 
 all : $(NAME)
 
 clean	: 
-	$(RM) $(FOLDER) $(SRC)
-fclean	:
+	$(RM) $(OBJ)
+	$(RM) $(LIBFT_DIR)
+
+fclean	: clean
 	$(RM) $(NAME)
 
-re :
-	make fclean
-	make
+re	: fclean all
 
 .PHONY : all clean fclean re
