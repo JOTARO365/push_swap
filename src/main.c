@@ -6,21 +6,61 @@
 /*   By: waon-in <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 20:51:42 by waon-in           #+#    #+#             */
-/*   Updated: 2024/04/16 21:01:04 by waon-in          ###   ########.fr       */
+/*   Updated: 2024/10/20 00:52:47 by waon-in          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
-int	main(int argv, char **argc)
+int	ft_check_num(char *nbr)
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
+	int	i;
 
-	stack_a = NULL;
-	stack_b = NULL;
+	i = 0;
+	while (nbr[i])
+	{
+		if (!(((nbr[i] == '-' || nbr[i] == '+') && ft_isdigit(nbr[i + 1]) \
+				&& (i == 0 || !ft_isdigit(nbr[i - 1])))) || ft_isdigit(nbr[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
-	if (argc < 2)
-		return ;
+int	main(int ac, char **av)
+{
+	t_swap		*tab;
+	char		**args;
+	int			i;
+	int			j;
+
+	if (ac == 1)
+		return (0);
+	if (ac == 2)
+		args = ft_split(av[1], ' ');
 	else
+		args = av;
+	if (ac == 2)
+		i = 0;
+	else
+		i = 1;
+	while (args[i])
+	{
+		if (!ft_check_num(args[i]))
+		{
+			handle_errors("error\n");
+			if (ac == 2)
+			{
+				j = 0;
+				while (args[j])
+					free(args[j++]);
+				free(args);
+			}
+			return (-1);
+		}
+		i++;
+	}
+	tab = malloc(sizeof(t_swap));
+	if (!tab)
+		return (-1);
 }

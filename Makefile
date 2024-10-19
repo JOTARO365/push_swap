@@ -39,9 +39,9 @@ $(NAME) : $(OBJ)
 
 all : $(NAME)
 
-clean	: 
+clean	:
 	$(RM) $(OBJ)
-	$(RM) $(LIBFT_DIR)
+	$(RM) $(LIBFT_DIR)/*.o
 
 fclean	: clean
 	$(RM) $(NAME)
