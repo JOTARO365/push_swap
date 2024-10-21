@@ -61,6 +61,19 @@ int	main(int ac, char **av)
 		i++;
 	}
 	tab = malloc(sizeof(t_swap));
-	if (!tab)
+	if (tab->swap_a == NULL)
+	{
+		if (ac == 2)
+		{
+			j = 0;
+			while (args[j])
+				free(args[j++]);
+			free(args);
+		}
 		return (-1);
+	}
+	tab->swap_b = NULL;
+	tab->asize = ft_lstsize(tab->swap_a);
+	tab->bsize = ft_lstsize(tab->swap_b);
+	return (0);
 }

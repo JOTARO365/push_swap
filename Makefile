@@ -24,13 +24,12 @@ LIBFT_DIR	=	libft
 
 LIBFT		=	$(LIBFT_DIR)/libft.a
 
-OBJ		=	$(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
+OBJ			=	$(SRC:.c=.o)
 
-RM		=	rm -rf
+RM			=	rm -rf
 
 
-bin/$(OBJ_DIR)/%.o: %.c
-	@mkdir -p $(OBJ_DIR)
+%.o: $(OBJ_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJ)
