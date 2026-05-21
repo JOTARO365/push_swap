@@ -110,13 +110,28 @@ ARG=$(shuf -i 1-500 -n 500 | tr '\n' ' ')
 
 ### AI usage
 
-This project was developed with assistance from **Claude (Anthropic)** as a learning tool. AI was used for:
+This project was built entirely with **Claude (Anthropic)** as the primary implementation tool. The student directed the work, asked questions to understand each step, and validated the results. Below is an honest account of what AI did:
 
-- **Project structure** — planning the file layout and function decomposition to comply with 42 Norminette rules (≤ 25 lines/function, ≤ 5 functions/file)
-- **Algorithm explanation** — understanding the Turkish sort / greedy cost-based insertion approach and how combined rotations (`rr`/`rrr`) reduce operation count
-- **Code generation** — generating the initial implementation of all source files, which was then reviewed and understood
-- **Debugging** — identifying two critical bugs: (1) `find_target` using a global minimum (`idx==0`) that could be in stack B during insertion, and (2) `ft_strjoin` crashing on `NULL` input in the checker
-- **Norminette compliance** — restructuring functions and splitting files to pass norminette without changing logic
-- **Testing** — writing `test_input.sh` covering 45 cases including edge cases (INT_MIN, INT_MAX, -0, overflow, duplicates)
+**Architecture & planning**
+- Designed the full file layout (15 `.c` files) to satisfy Norminette's ≤ 25 lines/function and ≤ 5 functions/file rules before writing any code
+- Chose linked list over array-based stack and decided on index normalization (rank 0..n-1) to simplify the algorithm
 
-All code was understood and validated by the student before submission.
+**Algorithm**
+- Explained and implemented the Turkish sort (greedy cost-based insertion): push all to B → sort 3 → insert cheapest back to A
+- Implemented the signed cost function (`cost_of`) and combined-rotation optimization (`rr`/`rrr`) that keeps operation count under 700 for 100 numbers and 5500 for 500 numbers
+
+**All source code**
+- Wrote every `.c` and `.h` file from scratch: `stack.c`, `parse.c`, `validate.c`, `normalize.c`, `utils.c`, all 4 ops files, `sort_small.c`, `sort_large.c`, `cost.c`, `move.c`, `checker_bonus.c`, `push_swap.h`, `Makefile`
+- Implemented libft additions: `get_next_line` (multi-fd linked-list variant), `ft_printf` (7 specifiers), and a fixed `ft_strjoin`
+
+**Debugging**
+- Found and fixed `find_target` returning an out-of-bounds position because `find_min_pos` searched for `idx==0` which can be in stack B during insertion — replaced with `find_min_in_a` that searches actual current contents of A
+- Found and fixed `ft_strjoin` segfaulting when called with `NULL` as first argument (get_next_line's initial stash), by adding NULL guards before `ft_strlen`
+- Resolved all Norminette violations by splitting `parse.c` → `validate.c`, moving `get_at` between files, and inlining `combined_cost` into `pick_cost`
+
+**Testing**
+- Wrote `test_input.sh` — 45 cases covering sorted input, error cases (duplicates, overflow, invalid chars, empty string), edge values (INT_MIN, INT_MAX, -0, +sign), and operation count benchmarks
+- Wrote `test_eval.sh` — 32 cases replicating every section of the official eval sheet, including the exact command sequences specified in the grading rubric
+
+**Learning materials**
+- Created `practice/` directory with skeleton versions of all 24 files (comments only, no implementation) and `GUIDE.txt` — a 13-phase implementation roadmap for the student to rewrite the entire project independently as a learning exercise. This directory is not part of the submission — the student will implement everything from scratch using it as a guide.
