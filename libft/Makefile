@@ -31,26 +31,32 @@ SRC		:=		isalpha isdigit isalnum isascii isprint \
 
 SRC_B	:=		lstnew lstadd_front lstadd_back lstsize lstlast lstdelone lstclear lstiter lstmap
 
+SRC_PF	:=		printf printf_utils
+
+GNL		:=		get_next_line.c get_next_line_utils.c
+
 FILES	:=		$(addprefix $(FT), $(addsuffix $(DOT), $(SRC)))
 FILES_B :=		$(addsuffix $(DOT), $(addprefix $(FT), $(addsuffix $(BONUS), $(SRC_B))))
+FILES_PF :=		$(addprefix $(FT), $(addsuffix $(DOT), $(SRC_PF)))
 
 OBJS	:=		$(FILES:.c=.o)
-
 OBJS_B	:=		$(FILES_B:.c=.o)
+OBJS_PF	:=		$(FILES_PF:.c=.o)
+OBJS_GNL :=	$(GNL:.c=.o)
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
+$(NAME):		$(OBJS) $(OBJS_PF) $(OBJS_GNL)
 	ar rcs $@ $^
 
 %.o:%.c 
 	$(CC) $(CFLAGS) -I. -c $< -o $@
 
-bonus:			$(OBJS) $(OBJS_B)
-	ar rcs $(NAME) $(OBJS) $(OBJS_B)
+bonus:			$(OBJS) $(OBJS_B) $(OBJS_PF) $(OBJS_GNL)
+	ar rcs $(NAME) $(OBJS) $(OBJS_B) $(OBJS_PF) $(OBJS_GNL)
 
 clean:
-	rm -rf $(OBJS) $(OBJS_B)
+	rm -rf $(OBJS) $(OBJS_B) $(OBJS_PF) $(OBJS_GNL)
 
 fclean:			clean
 	rm -rf $(NAME)

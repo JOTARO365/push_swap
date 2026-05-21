@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <stdio.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -73,5 +74,11 @@ void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 
 int			ft_lstsize(t_list *lst);
+
+/* ── ft_printf (integrated from ft_printf project) ───────────── */
+int			ft_printf(const char *s, ...);
+
+/* ── get_next_line (integrated from get_next_line project) ───── */
+char		*get_next_line(int fd);
 
 #endif

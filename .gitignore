@@ -1,0 +1,9 @@
+*.sh
+*.md
+!README.md
+*.pdf
+*.out
+.vscode/
+.claude/
+*.txt
+*.html
